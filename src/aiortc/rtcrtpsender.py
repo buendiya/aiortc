@@ -24,6 +24,7 @@ from .rtcrtpparameters import (
 from .rtp import (
     RTCP_PSFB_APP,
     RTCP_PSFB_PLI,
+    RTCP_PSFB_FIR,
     RTCP_RTPFB_NACK,
     RTP_HISTORY_SIZE,
     AnyRtcpPacket,
@@ -274,6 +275,8 @@ class RTCRtpSender:
             for seq in packet.lost:
                 await self._retransmit(seq)
         elif isinstance(packet, RtcpPsfbPacket) and packet.fmt == RTCP_PSFB_PLI:
+            self._send_keyframe()
+        elif isinstance(packet, RtcpPsfbPacket) and packet.fmt == RTCP_PSFB_FIR:
             self._send_keyframe()
         elif isinstance(packet, RtcpPsfbPacket) and packet.fmt == RTCP_PSFB_APP:
             try:
