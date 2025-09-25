@@ -17,8 +17,8 @@ from aiortc.rtcrtpparameters import (
 from aiortc.rtcrtpsender import RTCRtpSender
 from aiortc.rtp import (
     RTCP_PSFB_APP,
-    RTCP_PSFB_PLI,
     RTCP_PSFB_FIR,
+    RTCP_PSFB_PLI,
     RTCP_RTPFB_NACK,
     RtcpPsfbPacket,
     RtcpReceiverInfo,

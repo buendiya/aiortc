@@ -23,8 +23,8 @@ from .rtcrtpparameters import (
 )
 from .rtp import (
     RTCP_PSFB_APP,
-    RTCP_PSFB_PLI,
     RTCP_PSFB_FIR,
+    RTCP_PSFB_PLI,
     RTCP_RTPFB_NACK,
     RTP_HISTORY_SIZE,
     AnyRtcpPacket,
